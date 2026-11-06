@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wently</title><meta property="og:title" content="Wently">
+<meta property="og:description" content="Gittiğin her yer. Everywhere you went.">
+<style>
+:root{--paper:#F3EEDF;--card:#FBF8EF;--ink:#1B2B3F;--muted:#535D66;--accent:#0E6A7E;--line:#D9D1BC}
+@media (prefers-color-scheme:dark){:root{--paper:#0C1620;--card:#13202D;--ink:#ECEFEA;--muted:#A7B2BA;--accent:#5CC3CC;--line:#24364A}}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:40px 20px 80px}
+h1{font-size:2rem;line-height:1.2;margin:0 0 .5rem}h2{font-size:1.25rem;margin:2rem 0 .5rem;padding-top:1rem;border-top:1px solid var(--line)}
+h3{font-size:1.05rem;margin:1.5rem 0 .25rem}a{color:var(--accent)}code{font-size:.9em;background:var(--card);padding:.1em .3em;border-radius:4px}
+nav{display:flex;gap:16px;font-size:.95rem;margin-bottom:32px}nav a{text-decoration:none}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0}
+footer{margin-top:48px;color:var(--muted);font-size:.85rem}
+
+.btn{display:block;text-align:center;padding:14px 18px;border-radius:14px;font-weight:600;text-decoration:none;margin:12px 0}
+.primary{background:var(--accent);color:var(--paper)}.secondary{border:1px solid var(--line);color:var(--accent)}
+</style></head><body><main><h1 id="t"></h1><p id="b"></p>
+<a id="o" class="btn primary" href="#"></a>
+<a id="s" class="btn secondary" href="https://apps.apple.com/app/id6825007984"></a>
+</main><script>
+var tr=(navigator.language||"").toLowerCase().indexOf("tr")===0;
+var m=/^(trip|compare)\?d=([A-Za-z0-9_-]{1,400000})$/.exec(location.hash.slice(1));
+var kind=m?m[1]:"";
+document.getElementById("t").textContent=kind==="trip"?(tr?"Bir gezi seninle paylaşıldı":"A trip was shared with you"):kind==="compare"?(tr?"Haritalarınızı karşılaştırın":"Compare your maps"):"Wently";
+document.getElementById("b").textContent=m?(tr?"Açmak için Wently gerekli. Uygulama yüklüyse aşağıdaki düğmeye dokun.":"You need Wently to open this. If it is installed, tap the button below."):(tr?"Bu bağlantı eksik görünüyor. Arkadaşından yeniden göndermesini iste.":"This link looks incomplete. Ask your friend to send it again.");
+var o=document.getElementById("o");o.textContent=tr?"Wently'de aç":"Open in Wently";
+document.getElementById("s").textContent=tr?"App Store'dan indir":"Get it on the App Store";
+if(m){var u="wently://"+m[1]+"?d="+m[2];o.href=u;location.href=u}else{o.style.display="none"}
+</script></body></html>
